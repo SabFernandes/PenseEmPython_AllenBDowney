@@ -191,3 +191,34 @@ mão ou acrescentar instruções print ao código
 2. A versão de arc na seção 4.7 - Refatoração não é muito precisa porque a aproximação linear do círculo está sempre do lado de fora do círculo
 verdadeiro. Consequentemente, o Turtle acaba ficando alguns píxeis de distância do destino correto. Minha solução mostra um modo de reduzir o 
 efeito deste erro. Leia o código e veja se faz sentido para você. Se desenhar um diagrama, poderá ver como funciona.
+
+      def arc(t, r, angle):                                           #Diagrama da pilha
+          arc_length = 2 * math.pi * r * abs(angle) / 360             #line 1: A função vem com os parâmetros t, r, ângulo
+          n = int(arc_length / 4) + 3                                 #line 2: Realiza calculos do comprimento do arco, com o resultado realiza o calculo n
+          step_length = arc_length / n                                #line 3: Logo, após, realiza calculos do degrau do comprimento e ângulo
+          step_angle = float(angle) / n
+       # fazer uma pequena curva à esquerda antes de começar reduz
+       # o erro causado pela aproximação linear do arco
+          t.lt(step_angle/2)                                          #line 4: Define o movimento que o mouse fará á esquerda
+          polyline(t, n, step_length, step_angle)
+          t.rt(step_angle/2)                                          #line 5: Define o movimento que o mouse fará á direita
+
+Exercício 4.2
+Escreva um conjunto de funções adequadamente geral que possa desenhar flores como as figuras 4.1
+    import turtle
+    tur = turtle.Turtle()
+    for i in range(36):
+        tur.forward(300)
+        tur.left(170)
+Exercício 4.3
+Escreva um conjunto de funções adequadamente geral que possa desenhar formas como as da figura 4.2
+
+Exercício 4.4 
+As letras do alfabeto podem ser construídas a partir de um número moderado de elementos básicos, como linhas vertificais e horizontaise algumas curvas.
+Crie um alfabeto que possa ser desenhado com um número mínimo de elementos básicos e então escreva funções que desenham as letras
+Você deve escrever uma função para cada letra, com os nome draw_a, draw_b etc, e colocar suas funções em um arquivo chamado letters.py. Você pode baixar
+uma "máquina de escrever de turtle" no site thinkpython2.com/code/typewriter.py para ajudar a testar o seu código
+
+Exercício 4.5
+Leia sibre espirais em wikipedia.org/wiki/Espiral; Então escreva um programa que desenhe uma espiral de Arquimedes (ou um dos outros tipos)
+
