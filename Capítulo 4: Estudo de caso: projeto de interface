@@ -1,0 +1,193 @@
+Exercícios
+
+Exercícios 4.3
+
+1. Escreva uma função chamada square que receba um parâmetro chamado t, que é um turtle. Ele deve usar o turtle para desenhar um quadrado
+    import turtle
+
+    bob = turtle.Turtle()
+
+    def square(t):
+     for i in range(4):
+      bob.fd(100)
+      bob.lt(90)
+
+    square(bob)
+    
+2.Acrescente outro parâmetro, chamado lenght, ao square. Altere o corpo para que o comprimento dos lados seja lenght e então altere a chamada
+da função para fornecer um segundo argumento. Execute o programa novamente. Teste o seu programa com uma variedade de valores para length
+     import turtle
+
+     bob = turtle.Turtle()
+
+     def square(t, length):
+      for i in range(4):
+       bob.fd(length)
+       bob.lt(90)
+
+     square(bob, 25)
+     square(bob, 45)
+     
+3. Faça uma cópia do square e mude o nome para polygon. Acrescente outro parâmetro chamado n e altere o corpo para que desenhe um polígono
+regular de n lugares
+Dica: os ãngulos exteriores de um polígono regular de n lados são 360/n graus
+    import turtle
+
+    bob = turtle.Turtle()
+
+    def polygon(t, length, n):
+        angle = 360.0 / n
+        for i in range(n):
+            t.fd(length)
+            t.lt(angle)
+
+    polygon(bob, 70, 7)
+    
+4. Escreva uma função chamada circle que use o turtle, t e um raio r como parâmentros e desenhe um círculo aproximado ao chamar polygon como
+um comprimento e número de lados adequados. Teste a sua função com uma série de valores de r.
+Dica: descubra a circunfêrencia do círculo e certifique-se de que length *n = circumference
+      from cmath import pi
+      import turtle
+      import math
+
+      bob = turtle.Turtle()
+
+      def polygon(t, length, n):
+          angle = 360.0 / n
+          for i in range(n):
+              t.fd(length)
+              t.lt(angle)
+
+      def circle(t, r):
+          circumference = 2 * math.pi * r
+          n = int(circumference / 3) + 1
+          length = circumference / n
+          polygon(t, length, n)
+
+      circle(bob, 100)
+      
+5. Faça uma versão mais geral do circle chamada arc, que receba um parâmetro adicional de angle, para determinar qual fração do círculo deve
+ser desenhada. Angle está em unidades de graus, então quando angle = 360, o arc deve desenhar um círculo completo
+    from __future__ import print_function, division
+    import math
+    import turtle
+
+    def polyline(t, n, length, angle):
+        for i in range(n):
+            t.fd(length)
+            t.lt(angle)
+
+    def polygon(t, n, length):
+        angle = 360.0/n
+        polyline(t, n, length, angle)
+
+    def arc(t, r, angle):
+        arc_length = 2 * math.pi * r * abs(angle) / 360
+        n = int(arc_length / 4) + 3
+        step_length = arc_length / n
+        step_angle = float(angle) / n
+        t.lt(step_angle/2)
+        polyline(t, n, step_length, step_angle)
+        t.rt(step_angle/2)
+
+    def circle(t, r):
+        arc(t, r, 360)
+
+    if __name__ == '__main__':
+        bob = turtle.Turtle()
+        radius = 100
+        bob.pu()
+        bob.fd(radius)
+        bob.lt(90)
+        bob.pd()
+        circle(bob, radius)
+        
+Exercícios 4.12
+1. Desenhe um diagrama da pilha que mostre o estado do programa enquanto executa circle (bob, radius). Você pode fazer a aritmética á
+mão ou acrescentar instruções print ao código
+
+      """ __future__ é um módulo real, e serve a três propósitos:
+          Para evitar confundir as ferramentas existentes que analisam as instruções de importação e esperam encontrar os módulos que 
+          estão importando.
+          Para garantir que instruções futuras sejam executadas em versões anteriores a 2.1
+          Para documentar quando as mudanças incompatíveis foram introduzidas, e quando elas serão — ou foram — obrigatórias.
+      """
+      from __future__ import print_function, division
+
+      import math
+      import turtle
+
+      """ Desenha um quadrado com lados do comprimento dado.
+          Retorna a tartaruga para a posição inicial e localização.
+      """
+      def square(t, length):      #Diagrama da pilha
+                                  #line 1: ----- (Quadrado recebe o seu topo)
+          for i in range(4):      #line 2: | (Quadrado recebe seu topo + a sua lateral)
+              t.fd(length)        #line 3: ----- (Quadrado recebe seu topo + a sua lateral + a sua base)
+              t.lt(90)            #line 4: | (Quadrado recebe seu topo + a sua lateral + a sua base + a sua lateral
+
+
+      """ Desenha n segmentos de linha.
+          t: objeto tartaruga
+          n: número de segmentos de linha
+          length: comprimento de cada segmento
+          angle: graus entre segmentos
+      """
+      def polyline(t, n, length, angle):      #Diagrama da pilha                  
+          for i in range(n):                  #line 1: A função define o número de segmentos, comprimento, ângulo
+              t.fd(length)                    #line 2: É definido quem será o fd, mover a turtle para frente e It, para virar á esquerda
+              t.lt(angle)
+
+      """ Desenha um polígono com n lados.
+          t: Tartaruga
+          n: número de lados
+          length: comprimento de cada lado.
+      """     
+      def polygon(t, n, length):             #Diagrama da pilha
+          angle = 360.0/n                    #line 1: A função vem com parâmetros t, n, comprimento
+          polyline(t, n, length, angle)      #line 2: Realiza o calculo do ângulo e executa o poligono
+
+      """ Desenha um arco com o raio e ângulo fornecidos.
+          t: Tartaruga
+          r: raio
+          angle: ângulo subtendido pelo arco, em graus
+      """
+      def arc(t, r, angle):                                           #Diagrama da pilha
+          arc_length = 2 * math.pi * r * abs(angle) / 360             #line 1: A função vem com os parâmetros t, r, ângulo
+          n = int(arc_length / 4) + 3                                 #line 2: Realiza calculos do comprimento do arco, com o resultado realiza o calculo n
+          step_length = arc_length / n                                #line 3: Logo, após, realiza calculos do degrau do comprimento e ângulo
+          step_angle = float(angle) / n
+       # fazer uma pequena curva à esquerda antes de começar reduz
+       # o erro causado pela aproximação linear do arco
+          t.lt(step_angle/2)                                          #line 4: Define o movimento que o mouse fará á esquerda
+          polyline(t, n, step_length, step_angle)
+          t.rt(step_angle/2)                                          #line 5: Define o movimento que o mouse fará á direita
+
+      """ Desenha um círculo com o raio dado.
+          t: Tartaruga
+          r: raio
+      """
+      def circle(t, r):             #Diagrama da pilha
+          arc(t, r, 360)            #line 1: A função define os parâmetros e puxa a função arc
+
+      # a condição a seguir verifica se estamos executando como um script, nesse caso execute o código de teste,
+      # ou sendo importado, nesse caso não.
+
+      if __name__ == '__main__':
+
+          bob = turtle.Turtle()                       #Diagrama da pilha
+                                                      #line 1: define bob como um turtle
+          # desenha um círculo centrado na origem     #line 2: define o raio 
+          radius = 100                                #line 3: define o bob.pu, levanta a pena de desenho. Movimenta o objeto sem desenhar.
+          bob.pu()                                    #line 4: define o bob.fd, move o turtle para frente
+          bob.fd(radius)                              #line 5: define o bob.It, move o turtle para a esquerda
+          bob.lt(90)                                  #line 6: define o bob.pd, move o turtle para baixo
+          bob.pd()
+          circle(bob, radius)
+
+       # espera o usuário fechar a janela
+          turtle.mainloop()
+          
+2. A versão de arc na seção 4.7 - Refatoração não é muito precisa porque a aproximação linear do círculo está sempre do lado de fora do círculo
+verdadeiro. Consequentemente, o Turtle acaba ficando alguns píxeis de distância do destino correto. Minha solução mostra um modo de reduzir o 
+efeito deste erro. Leia o código e veja se faz sentido para você. Se desenhar um diagrama, poderá ver como funciona.
