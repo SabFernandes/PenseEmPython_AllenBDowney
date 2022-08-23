@@ -220,5 +220,5 @@ Você deve escrever uma função para cada letra, com os nome draw_a, draw_b etc
 uma "máquina de escrever de turtle" no site thinkpython2.com/code/typewriter.py para ajudar a testar o seu código
 
 Exercício 4.5
-Leia sibre espirais em wikipedia.org/wiki/Espiral; Então escreva um programa que desenhe uma espiral de Arquimedes (ou um dos outros tipos)
+Leia sibre espirais em https://pt.wikipedia.org/wiki/Espiral; Então escreva um programa que desenhe uma espiral de Arquimedes (ou um dos outros tipos)
 
