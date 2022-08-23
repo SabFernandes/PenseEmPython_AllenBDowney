@@ -1,4 +1,4 @@
-# Pense em Python - Pense como um cientirta da computação
+# Pense em Python - Pense como um cientista da computação
 
 Minhas soluções dos exercícios do livro Pense em Python, de Allen B. Downey.
 
