@@ -210,8 +210,50 @@ Escreva um conjunto de funções adequadamente geral que possa desenhar flores c
     for i in range(36):
         tur.forward(300)
         tur.left(170)
+        
 Exercício 4.3
 Escreva um conjunto de funções adequadamente geral que possa desenhar formas como as da figura 4.2
+        from __future__ import print_function, division
+        import math
+        import turtle
+
+        def draw_pie(t, n, r):
+            polypie(t, n, r)
+            t.pu()
+            t.fd(r*2 + 10)
+            t.pd()
+
+        def polypie(t, n, r):
+            angle = 360.0 / n
+            for i in range(n):
+                isosceles(t, r, angle/2)
+                t.lt(angle)
+
+        def isosceles(t, r, angle):
+            y = r * math.sin(angle * math.pi / 180)
+
+            t.rt(angle)
+            t.fd(r)
+            t.lt(90+angle)
+            t.fd(2*y)
+            t.lt(90+angle)
+            t.fd(r)
+            t.lt(180-angle)
+
+        bob = turtle.Turtle()
+
+        bob.pu()
+        bob.bk(130)
+        bob.pd()
+
+        size = 40
+        draw_pie(bob, 5, size)
+        draw_pie(bob, 6, size)
+        draw_pie(bob, 7, size)
+        draw_pie(bob, 8, size)
+
+        bob.hideturtle()
+        turtle.mainloop()
 
 Exercício 4.4 
 As letras do alfabeto podem ser construídas a partir de um número moderado de elementos básicos, como linhas vertificais e horizontaise algumas curvas.
@@ -222,3 +264,4 @@ uma "máquina de escrever de turtle" no site thinkpython2.com/code/typewriter.py
 Exercício 4.5
 Leia sibre espirais em https://pt.wikipedia.org/wiki/Espiral; Então escreva um programa que desenhe uma espiral de Arquimedes (ou um dos outros tipos)
 
+Anotação: Na matemática, espiral é uma curva plana que gira em torno de um ponto central dele se afastando ou se aproximando segundo uma determinada lei
