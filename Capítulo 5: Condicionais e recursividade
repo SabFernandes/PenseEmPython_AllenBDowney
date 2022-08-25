@@ -163,6 +163,8 @@ Leia a próxima função e veja se consegue compreender o que ela faz (veja os e
      draw(t, length, n-1)
      t.lt(angle)
      t.bk(length * n)
+     
+     Figura simétrica em forma de relâmpago
 
 Exercício 5.6
 
