@@ -1,1 +1,11 @@
+Como exercício, use o desenvolvimento incremental para escrever uma função chamada hypotenuse, que devolva o comprimento da hipotenusa de um
+triângulo retângulo dados os comprimentos dos outros dois lados como argumentos. Registre cada etapa do processo de desenvolvimento no decorrer
+do processo.
 
+def hypotenuse(a, b, c):
+ a = int(8)
+ b = int(10)
+ c = int(12)
+ 
+ teorema = a**2 + b**2 == c**2
+   
