@@ -1,23 +1,23 @@
 Como exercício, use o desenvolvimento incremental para escrever uma função chamada hypotenuse, que devolva o comprimento da hipotenusa de um triângulo retângulo
 dados os comprimentos dos outros dois lados como argumentos. Registre cada etapa do processo de desenvolvimento no decorrer do processo.
 
-1º versão: 
-import math
+        1º versão: 
+        import math
 
-a = int(8)
-b = int(10)
-c = math.hypot(a, b)
-    
-print(c)
+        a = int(8)
+        b = int(10)
+        c = math.hypot(a, b)
 
-2° versão:
-import math
+        print(c)
 
-def hypotenuse(a, b):
-    c = math.hypot(a, b)
-    return c
+        2° versão:
+        import math
 
-print(hypotenuse(10, 8))
+        def hypotenuse(a, b):
+            c = math.hypot(a, b)
+            return c
+
+        print(hypotenuse(10, 8))
 
 Exercício 6.1
 
@@ -40,7 +40,51 @@ x = 1
 y = x + 1
 print(c(x, y+3, x+y))
 
+        def b(z):                   #Função criada com o nome b, recebe como argumento o z
+            prod = a(z, z)          #Determina a variavel prod, que recebe o valor de a(z,z)
+            print(z, prod)          #Imprime o valor de z, prod
+            return prod             #Retorna o valor de prod
 
+        def a(x, y):                #Função criada com o nome a, recebe como argumento o x, y
+            x = x + 1               #Determina a variavel x, que recebe o x+1
+            return x * y            #Retorna o valor de x*y
+
+        def c(x, y, z):             #Função criada com o nome c, recebe como argumento x, y, z
+            total = x + y + z       #Determina a variavel total, que recebe x + y + z
+            square = b(total)**2    #Criação da variavel square, que recebe o b(total)**2
+            return square           #Retorna o valor do square
+
+        x = 1                       #x atribui o valor de 1
+        y = x + 1                   #y atribui o valor de 2
+        print(c(x, y+3, x+y))       #imprime a soma dos valores 
+
+        '''
+        __main__:
+            x --> 1
+            y --> 2
+        c:
+            x --> 1
+            y --> 5
+            z --> 3
+            total --> 9
+            square --> 0
+        b:
+            z --> 9
+            prod --> 0
+        a:
+            x --> 9
+            y --> 9
+            x --> 10
+        b:
+            z --> 9
+            prod --> 90
+        c:
+            x --> 1
+            y --> 5
+            z --> 3
+            total --> 9
+            square --> 8100
+        '''
 
 Exercício 6.2
 
