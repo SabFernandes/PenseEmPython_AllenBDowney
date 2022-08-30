@@ -2,10 +2,36 @@ Como exercício, use o desenvolvimento incremental para escrever uma função ch
 triângulo retângulo dados os comprimentos dos outros dois lados como argumentos. Registre cada etapa do processo de desenvolvimento no decorrer
 do processo.
 
-def hypotenuse(a, b, c):
- a = int(8)
- b = int(10)
- c = int(12)
- 
- teorema = a**2 + b**2 == c**2
+1º versão: 
+import math
+
+a = int(8)
+b = int(10)
+c = math.hypot(a, b)
+    
+print(c)
+
+2° versão:
+import math
+
+def hypotenuse(a, b):
+    
+    a = int(10)
+    b = int(8)
+    c = math.hypot(a, b)
+    
+    return c
+
+print(hypotenuse(10, 8))
+
+3° versão:
+import math
+
+def hypotenuse(a, b):
+    c = math.hypot(a, b)
+    return c
+
+print(hypotenuse(10, 8))
+
+
    
