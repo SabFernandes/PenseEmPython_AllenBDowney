@@ -19,6 +19,16 @@ dados os comprimentos dos outros dois lados como argumentos. Registre cada etapa
 
         print(hypotenuse(10, 8))
 
+Como um exercício, escreva uma função is_between(x, y, z) que retorna True, se x <= y <= z, ou False, se não for o caso
+        def is_between(x, y, z):
+         if x <= y <= z:
+             return True
+         else:
+             return False 
+
+        print(is_between(20,4,6))
+
+
 Exercício 6.1
 
 Desenhe um diagrama da pilha do seguinte programa. O que o programa exibe?
