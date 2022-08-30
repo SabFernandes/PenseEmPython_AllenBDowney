@@ -41,6 +41,16 @@ A função integrada eval toma uma string e a avalia, usando o interpretador do 
 
 Escreva uma função chamada eval_loop que iterativamente peça uma entrada ao usuário, a avalie usando eval e exiba o resultado.
 Ela deve continuar até que o usuário digite done; então deverá exibir o valor da última expressão avaliada.
+        1° versão: 
+        import math
+
+        while True:
+         line = input('Insera um valor > ')
+         if line == 'done':
+             break
+         print(math.sqrt(float(line)))
+        print('Done!')
+
 
 Exercício 7.3
 
