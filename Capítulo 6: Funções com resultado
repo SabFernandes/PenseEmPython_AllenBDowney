@@ -132,8 +132,28 @@ Veremos como funcionam no Capítulo 8.
 
 Digite essas funções em um arquivo chamado palindrome.py e teste-as. O que acontece se chamar middle com uma string de duas letras? Uma letra? E se a string estiver
 vazia, escrita com '' e não contiver nenhuma letra?
+        O retorno foi vazio, sem resposta
+
 Escreva uma função chamada is_palindrome que receba uma string como argumento e retorne True se for um palíndromo e False se não for. Lembre-se de que você pode usar
 a função integrada len para verificar o comprimento de uma string.
+
+        def first(word):
+            return word[0]
+        def last(word):
+            return word[-1]
+        def middle(word):
+            return word[1:-1]
+
+        def is_polindrome(word):
+            if len(word) < 1:
+                return True
+            elif first(word) != last(word):
+                return False
+            else:
+                return is_polindrome(middle(word))
+
+        print(is_polindrome('sabrina'))
+        print(is_polindrome('ana'))
 Solução: http://thinkpython2.com/code/palindrome_soln.py.
    
 Exercício 6.4
