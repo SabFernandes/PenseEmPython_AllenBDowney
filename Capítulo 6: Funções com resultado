@@ -161,6 +161,16 @@ Exercício 6.4
 Um número a é uma potência de b se for divisível por b e a/b for uma potência de b. Escreva uma função chamada is_power que receba os parâmetros a e b e retorne True
 se a for uma potência de b. Dica: pense no caso-base.
 
+        def is_power(a,b):
+            if a==b:
+                return True
+            elif a % b != 0:
+                return False
+            else:
+                return is_power(a/b, b)
+
+        print(is_power(10, 10))
+
 Exercício 6.5
 
 O maior divisor comum (MDC, ou GCD em inglês) de a e b é o maior número que divide ambos sem sobrar resto.
@@ -169,4 +179,12 @@ gcd(a, 0) = a.
 Escreva uma função chamada gcd que receba os parâmetros a e b e devolva o maior divisor comum.
 Crédito: Este exercício é baseado em um exemplo do livro de Abelson e Sussman, Structure and Interpretation of Computer Programs (Estrutura e interpretação de
 programas de computador, MIT Press, 1996).
+
+        def mvc(a, b):
+            if a % b == 0:
+                return b
+            return mvc(b, a % b)
+
+        print(mvc(16, 8))
+        print(mvc(140, 25))
 
