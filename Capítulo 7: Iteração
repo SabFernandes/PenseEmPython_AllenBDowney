@@ -12,6 +12,40 @@ Exercício 7.1
 Copie o loop de “Raízes quadradas”, na página 111, e encapsule-o em uma função chamada mysqrt que receba a como parâmetro, escolha um valor razoável de x e devolva
 uma estimativa da raiz quadrada de a.
 
+            a = 4
+            x = 3
+            y = (x + a/x) / 2
+            print(y)
+
+            x = y
+            y = (x + a/x) / 2
+            print(y)
+
+            x = y
+            y = (x + a/x) / 2
+            print(y)
+
+            x = y
+            y = (x + a/x) / 2
+            print(y)
+
+            x = y
+            y = (x + a/x) / 2
+            print(y)
+
+            x = y
+            y = (x + a/x) / 2
+            print(y)
+
+            while True:
+             print(x)
+             y = (x + a/x) / 2
+             if y == x:
+              break
+             if abs(y-x) < epsilon:
+              break
+
+
 Para testar, escreva uma função denominada test_square_root, que exibe uma tabela como esta:
 a   mysqrt(a)     math.sqrt(a)  diff
 -   ---------     ------------  ----
@@ -27,6 +61,8 @@ a   mysqrt(a)     math.sqrt(a)  diff
 
 A primeira coluna é um número, a; a segunda coluna é a raiz quadrada de a calculada com mysqrt; a terceira coluna é a raiz quadrada calculada por math.sqrt; a quarta
 coluna é o valor absoluto da diferença entre as duas estimativas.
+
+
 
 Exercício 7.2
 
@@ -50,7 +86,20 @@ Ela deve continuar até que o usuário digite done; então deverá exibir o valo
              break
          print(math.sqrt(float(line)))
         print('Done!')
+        
+        2° versão:
+        import math
 
+        def eval_loop():
+
+            while True:
+                line = input('Insera um valor > ')
+                if line == 'done':
+                    break
+                print(math.sqrt(float(line)))
+            print('Done!')
+
+        eval_loop()
 
 Exercício 7.3
 
