@@ -1,2 +1,101 @@
 Como exercício, escreva uma função que receba uma string como argumento e exiba as letras de trás para a frente, uma por linha
+    1° versão:
+    string = "banana"
+    for letter in string:
+     print(letter)
 
+    2° versão:
+    fruit = 'banana'
+    index = 0
+    while index < len(fruit):
+        letter = fruit[index]
+        print(letter)
+        index = index + 1
+        
+Claro que não está exatamente certo porque "Ouack", "Quack" foram mal soletrados. Como exercício, altere para corrigir este erro.
+
+
+Continuando este exemplo, o que você acha que fruit[:] significa? Teste e veja
+
+
+Como exercício, altere o find para que tenha um terceiro parâmetro: o índice em word onde deve começar a procurar
+    1° versão: 
+    def find(word, letter):
+        index = 0
+        while index < len(word):
+            if word[index] == letter:
+                return index
+            index = index + 1
+        return - 1
+
+    print(find('banana', 'a'))
+    
+Então reescreva a função para que, em vez de atravessar a string, ela use a versão de três parâmetros do find da seção anterior
+
+Exercícios
+
+8.1 - Leia a documentação dos métodos de strings em http://docs.python.org/3/library/stdtypes.html#string-methods. Pode ser uma boa ideia experimentar alguns
+deles para entender como funcionam. strip e replace são especialmente úteis.
+A documentação usa uma sintaxe que pode ser confusa. Por exemplo, em find(sub[, start[, end]]), os colchetes indicam argumentos opcionais. Então sub é exigido
+mas start é opcional, e se você incluir start, então end é opcional.
+
+8.2 - Há um método de string chamado count, que é semelhante à função em “Loop e contagem”, na página 123. Leia a documentação deste método e escreva uma invocação
+que conte o número de letras 'a' em 'banana'.
+
+8.3 - Uma fatia de string pode receber um terceiro índice que especifique o “tamanho do passo”; isto é, o número de espaços entre caracteres sucessivos. Um tamanho
+de passo 2 significa tomar um caractere e outro não; 3 significa tomar um e dois não etc.
+  >>> fruit = 'banana'
+  >>> fruit[0:5:2]
+  'bnn'
+Um tamanho de passo -1 atravessa a palavra de trás para a frente, então a fatia [::-1] gera uma string invertida.
+Use isso para escrever uma versão de uma linha de is_palindrome do Exercício 6.3.
+
+8.4 - As seguintes funções pretendem verificar se uma string contém alguma letra minúscula, mas algumas delas estão erradas. Para cada função, descreva o que ela
+faz (assumindo que o parâmetro seja uma string).
+        def any_lowercase1(s):
+          for c in s:
+            if c.islower():
+              return True
+            else:
+              return False
+
+      def any_lowercase2(s):
+          for c in s:
+              if 'c'.islower():
+                  return 'True'
+              else:
+                  return 'False'
+
+      def any_lowercase3(s):
+          for c in s:
+              flag = c.islower()
+          return flag
+
+      def any_lowercase4(s):
+          flag = False
+          for c in s:
+              flag = flag or c.islower()
+          return flag
+
+      def any_lowercase5(s):
+          for c in s:
+              if not c.islower():
+                  return False
+          return True
+
+8.5 - Uma cifra de César é uma forma fraca de criptografia que implica “rotacionar” cada letra por um número fixo de lugares. Rotacionar uma letra significa
+deslocá-lo pelo alfabeto, voltando ao início se for necessário, portanto ‘A’ rotacionado por 3 é ‘D’ e ‘Z’ rotacionado por 1 é ‘A’.
+Para rotacionar uma palavra, faça cada letra se mover pela mesma quantidade de posições. Por exemplo, “cheer” rotacionado por 7 é “jolly” e “melon” rotacionado
+por -10 é “cubed”. No filme 2001: Uma odisseia no espaço, o computador da nave chama-se HAL, que é IBM rotacionado por -1.
+Escreva uma função chamada rotate_word que receba uma string e um número inteiro como parâmetros, e retorne uma nova string que contém as letras da string original
+rotacionadas pelo número dado.
+Você pode usar a função integrada ord, que converte um caractere em um código numérico e chr, que converte códigos numéricos em caracteres. As letras do alfabeto
+são codificadas em ordem alfabética, então, por exemplo:
+
+    >>> ord('c') - ord('a')
+    2
+    
+Porque 'c' é a “segunda” letra do alfabeto. Mas tenha cuidado: os códigos numéricos de letras maiúsculas são diferentes.
+
+Piadas potencialmente ofensivas na internet às vezes são codificadas em ROT13, que é uma cifra de César com rotação 13. Se não se ofender facilmente, encontre e
+decifre algumas delas.
