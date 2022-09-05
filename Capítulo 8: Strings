@@ -31,15 +31,17 @@ Como exercício, escreva uma função que receba uma string como argumento e exi
     print(soletrando('banana'))
 
 Claro que não está exatamente certo porque "Ouack", "Quack" foram mal soletrados. Como exercício, altere para corrigir este erro.
-        1° versão:
-        prefixes = 'JKLMNOPQ'
-        suffix = 'ack'
+        def palavras():
+            prefixes = 'JKLMNOPQ'
 
-        if prefixes == 'O':
-            suffix = 'uack'
-
-        for letter in prefixes:
-            print(letter + suffix)
+            for letter in prefixes:
+                if letter == 'Q' or letter == 'O':
+                    suffix = 'uack'
+                    print(letter + suffix)
+                else:
+                    suffix = 'ack'
+                    print(letter + suffix)
+        palavras()
 
 Continuando este exemplo, o que você acha que fruit[:] significa? Teste e veja
 
