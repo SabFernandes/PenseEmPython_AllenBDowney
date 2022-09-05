@@ -60,6 +60,14 @@ Como exercício, altere o find para que tenha um terceiro parâmetro: o índice 
 
     print(find('banana', 'a'))
     
+  
+word = 'banana'
+count = 0
+for letter in word:
+    if letter == 'a':
+        count = count + 1
+print(count)
+
 Então reescreva a função para que, em vez de atravessar a string, ela use a versão de três parâmetros do find da seção anterior
 
 Exercícios
