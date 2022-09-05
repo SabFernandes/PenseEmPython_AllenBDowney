@@ -13,10 +13,20 @@ Como exercício, escreva uma função que receba uma string como argumento e exi
         index = index + 1
         
 Claro que não está exatamente certo porque "Ouack", "Quack" foram mal soletrados. Como exercício, altere para corrigir este erro.
+        1° versão:
+        prefixes = 'JKLMNOPQ'
+        suffix = 'ack'
 
+        if prefixes == 'O':
+            suffix = 'uack'
+
+        for letter in prefixes:
+            print(letter + suffix)
 
 Continuando este exemplo, o que você acha que fruit[:] significa? Teste e veja
 
+        fruit = 'banana'  } Imprime a palavra completa
+        print(fruit[:])   } Ou seja, banana
 
 Como exercício, altere o find para que tenha um terceiro parâmetro: o índice em word onde deve começar a procurar
     1° versão: 
