@@ -60,6 +60,16 @@ Como exercício, altere o find para que tenha um terceiro parâmetro: o índice 
 
     print(find('banana', 'a'))
     
+    2° versão e correta:
+    def find(word, letter, index):
+    while index < len(word):
+        if word[index] == letter:
+            return index
+        index = index + 1
+    return - 1
+
+print(find("Esse é o livro de python", "e", 1))
+    
   
 word = 'banana'
 count = 0
@@ -67,8 +77,16 @@ for letter in word:
     if letter == 'a':
         count = count + 1
 print(count)
-
+Como exercício , encapsule este código em uma função denominada count e generalise-o para que aceite a string e a letra como argumentos
 Então reescreva a função para que, em vez de atravessar a string, ela use a versão de três parâmetros do find da seção anterior
+
+        1° versão:
+        def count(word, letter):
+            count = 0
+            for letter in word:
+                count = count + 1
+
+        print(count('banana', 'a'))
 
 Exercícios
 
