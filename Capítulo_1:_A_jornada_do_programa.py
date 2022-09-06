@@ -1,6 +1,6 @@
-Exercícios 
+#Exercícios 
 
-Exercícios 1.1
+#Exercícios 1.1
 
 #Em uma instrução print, o que acontece se você omitir um dos parênteses ou ambos?
 1. print('hello' -> SyntaxError: unexpected EOF while parsing
