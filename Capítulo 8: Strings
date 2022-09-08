@@ -159,6 +159,55 @@ faz (assumindo que o parâmetro seja uma string).
               if not c.islower():
                   return False
           return True
+          
+          1° versão e correta:
+          
+          #Verifica apenas se a primeira letra é minuscula ou maiscula
+            def any_lowercase1(s):
+              for c in s:
+                if c.islower():
+                  return True
+                else:
+                  return False
+
+            #Verifica se tem letra minuscula e maiscula
+            def any_lowercase2(s):
+              for c in s:
+                if 'c'.islower():
+                  return 'True'
+                else:
+                  return 'False'
+
+            #Verifica se tem letra minuscula e maiscula
+            def any_lowercase3(s):
+              for c in s:
+                flag = c.islower()
+              return flag
+
+            #Verifica se tem letra minuscula e maiscula
+            def any_lowercase4(s):
+              flag = False
+              for c in s:
+                flag = flag or c.islower()
+              return flag
+
+            #Apresenta um erro, pois não verifica se há letra maiscula ou minuscula
+            def any_lowercase5(s):
+              for c in s:
+                if not c.islower():
+                  return False
+              return True
+
+            print(any_lowercase1('Amor'))
+            print(any_lowercase1('aMor'))
+            print(any_lowercase2('Amor'))
+            print(any_lowercase2('aMor'))
+            print(any_lowercase3('Amor'))
+            print(any_lowercase3('aMor'))
+            print(any_lowercase4('Amor'))
+            print(any_lowercase4('aMor'))
+            print(any_lowercase5('Amor'))
+            print(any_lowercase5('aMor'))
 
 8.5 - Uma cifra de César é uma forma fraca de criptografia que implica “rotacionar” cada letra por um número fixo de lugares. Rotacionar uma letra significa
 deslocá-lo pelo alfabeto, voltando ao início se for necessário, portanto ‘A’ rotacionado por 3 é ‘D’ e ‘Z’ rotacionado por 1 é ‘A’.
