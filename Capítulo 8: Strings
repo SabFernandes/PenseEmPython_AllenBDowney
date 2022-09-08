@@ -95,6 +95,18 @@ deles para entender como funcionam. strip e replace são especialmente úteis.
 A documentação usa uma sintaxe que pode ser confusa. Por exemplo, em find(sub[, start[, end]]), os colchetes indicam argumentos opcionais. Então sub é exigido
 mas start é opcional, e se você incluir start, então end é opcional.
 
+    1° versão e correta:
+    word = 'Pense em Python com allen B. Downey'
+
+    result = word.find('Python')
+    print ("Substring 'Python' encontrada na index:", result )
+    
+    2° versão e correta:
+    string = "Python for Python by Python"
+
+    new_str = string.replace('hon', 'homs*', 1)
+    print(new_str)
+
 8.2 - Há um método de string chamado count, que é semelhante à função em “Loop e contagem”, na página 123. Leia a documentação deste método e escreva uma invocação
 que conte o número de letras 'a' em 'banana'.
 
