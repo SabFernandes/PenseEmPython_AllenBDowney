@@ -4,6 +4,14 @@ Há soluções para estes exercícios na próxima seção. Mas é bom você tent
 Exercício 9.1
 Escreva um programa que leia words.txt e imprima apenas as palavras com mais de 20 caracteres (sem contar whitespace).
 
+    fin = open('words.txt')
+    line = fin.readline()
+
+    for line in fin:
+        word = line.strip()
+        if len(word) > 20:
+            print(word)
+
 Exercício 9.2
 Em 1939, Ernest Vincent Wright publicou uma novela de 50.000 palavras, chamada Gadsby, que não contém a letra “e”. Como o “e” é a letra mais comum em inglês, isso
 não é algo fácil de fazer.
