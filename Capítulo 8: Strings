@@ -149,6 +149,12 @@ de passo 2 significa tomar um caractere e outro não; 3 significa tomar um e doi
 Um tamanho de passo -1 atravessa a palavra de trás para a frente, então a fatia [::-1] gera uma string invertida.
 Use isso para escrever uma versão de uma linha de is_palindrome do Exercício 6.3.
 
+        def is_palindrome(word):
+            return word == word[::-1]
+
+        print(is_palindrome('sabrina'))
+        print(is_palindrome('ana'))
+
 8.4 - As seguintes funções pretendem verificar se uma string contém alguma letra minúscula, mas algumas delas estão erradas. Para cada função, descreva o que ela
 faz (assumindo que o parâmetro seja uma string).
         def any_lowercase1(s):
@@ -247,3 +253,12 @@ Porque 'c' é a “segunda” letra do alfabeto. Mas tenha cuidado: os códigos 
 
 Piadas potencialmente ofensivas na internet às vezes são codificadas em ROT13, que é uma cifra de César com rotação 13. Se não se ofender facilmente, encontre e
 decifre algumas delas.
+
+        def rotate_word(word, order):
+            new_word = ''
+            for letter in word:
+                new_word += chr(ord(letter) + order)
+            return new_word
+
+        print(rotate_word('cheer', 7))
+        print(rotate_word('HAL', 1))
