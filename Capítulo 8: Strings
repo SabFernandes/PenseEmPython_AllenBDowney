@@ -107,8 +107,17 @@ mas start é opcional, e se você incluir start, então end é opcional.
     new_str = string.replace('hon', 'homs*', 1)
     print(new_str)
 
+    3° versão e correta:
+    txt = 'www.google.com'
+    
+    new_google = txt.strip('cmowz.')
+    print(new_google)
+    
 8.2 - Há um método de string chamado count, que é semelhante à função em “Loop e contagem”, na página 123. Leia a documentação deste método e escreva uma invocação
 que conte o número de letras 'a' em 'banana'.
+
+        string = "banana" 
+        print(string.count("a"))
 
 8.3 - Uma fatia de string pode receber um terceiro índice que especifique o “tamanho do passo”; isto é, o número de espaços entre caracteres sucessivos. Um tamanho
 de passo 2 significa tomar um caractere e outro não; 3 significa tomar um e dois não etc.
