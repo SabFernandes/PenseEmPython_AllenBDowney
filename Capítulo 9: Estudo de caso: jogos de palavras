@@ -40,6 +40,15 @@ Altere seu programa na seção anterior para imprimir apenas as palavras que nã
     
     print(has_no_e('none'))
     
+    3° versão: 
+    def has_no_e(word):
+     for letter in word:
+      if letter == 'e':
+       return False
+     return True
+    
+    print(has_no_e('Muito bem, agora eu vou parar.'))
+    
 Exercício 9.3
 Escreva uma função chamada avoids que receba uma palavra e uma série de letras proibidas, e retorne True se a palavra não usar nenhuma das letras proibidas.
 Altere o código para que o usuário digite uma série de letras proibidas e o programa imprima o número de palavras que não contêm nenhuma delas. Você pode encontrar
