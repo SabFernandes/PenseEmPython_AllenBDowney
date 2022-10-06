@@ -64,11 +64,21 @@ Escreva uma função chamada chop que tome uma lista alterando-a para remover o 
     
 Exercício 10.5
 Escreva uma função chamada is_sorted que tome uma lista como parâmetro e retorne True se a lista estiver classificada em ordem ascendente, e False se não for o caso.
-Por exemplo:
->>> is_sorted([1, 2, 2])
-True
->>> is_sorted(['b', 'a'])
-False
+    Por exemplo:
+    >>> is_sorted([1, 2, 2])
+    True
+    >>> is_sorted(['b', 'a'])
+    False
+
+        def is_sorted(t):
+          return t == sorted(t)
+
+        t = [1, 2, 2]
+        print(is_sorted(t))
+
+        t = ['b', 'a']
+        print(is_sorted(t))
+
 
 Exercício 10.6
 Duas palavras são anagramas se você puder soletrar uma rearranjando as letras da outra. Escreva uma função chamada is_anagram que tome duas strings e retorne True se
